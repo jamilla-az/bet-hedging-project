@@ -3,7 +3,6 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Bet-Hedging Paper Analysis Scripts](#bet-hedging-paper-analysis-scripts)
-  - [Table of Contents](#table-of-contents)
   - [Main Loading Scripts](#main-loading-scripts)
   - [No Temperature Tracking](#no-temperature-tracking)
   - [Null Distribution of Preference](#null-distribution-of-preference)
