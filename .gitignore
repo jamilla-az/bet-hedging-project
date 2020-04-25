@@ -1,0 +1,15 @@
+assay-design/*
+genetic-diversity/data/*
+heritability/data/*
+null-distribution/data/*
+bet-hedge-modeling/data/*
+bet-hedge-modeling/map-making/data/*
+bet-hedge-modeling/seasonal-dynamics/data/*
+life-history-curves/data/*
+plasticity/data/*
+plasticity/stan-output/*
+variability/data/*
+persistence/SomA_persistence/*
+data-loading/calibrated-tunnel-temps/*
+temp-off-tracking/tempOFF_RAL535/*
+ReadMe_complete.md
