@@ -1,3 +1,25 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Bet-Hedging Paper Analysis Scripts](#bet-hedging-paper-analysis-scripts)
+  - [Table of Contents](#table-of-contents)
+  - [Main Loading Scripts](#main-loading-scripts)
+  - [No Temperature Tracking](#no-temperature-tracking)
+  - [Null Distribution of Preference](#null-distribution-of-preference)
+  - [Thermal Preference Persistence](#thermal-preference-persistence)
+  - [Life History Curves](#life-history-curves)
+  - [Thermal Preference Plasticity](#thermal-preference-plasticity)
+  - [Modeling Bet-Hedging Advantage](#modeling-bet-hedging-advantage)
+    - [Map of Bet-Hedging Advantage](#map-of-bet-hedging-advantage)
+    - [Seasonal Dynamics of Mean Preference](#seasonal-dynamics-of-mean-preference)
+  - [Thermal Preference Variability](#thermal-preference-variability)
+  - [Thermal Preference Heritability](#thermal-preference-heritability)
+  - [Genetic Diversity Analysis](#genetic-diversity-analysis)
+  - [Two-Choice Assay Design](#two-choice-assay-design)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Bet-Hedging Paper Analysis Scripts
 
 *created by Jamilla Akhund-Zade on 4-24-2020*
