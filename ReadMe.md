@@ -30,10 +30,6 @@ The datasets corresponding to the scripts will be available on the de Bivort lab
 
 **Plotting note:** some MATLAB scripts require the gramm package for data visualization. Installation [here](https://github.com/piermorel/gramm).   
 
-## Table of Contents
-
-[TOC]
-
 ## Main Loading Scripts
 
 These are scripts used for processing and filtering positional data exported by [MARGO](https://github.com/de-Bivort-Lab/margo) (beta). MARGO is a MATLAB-based object tracking software, and the output of the beta version of MARGO (used exclusively for all the acquired experimental data) is a .mat file. The following scripts MATLAB-exclusive.
