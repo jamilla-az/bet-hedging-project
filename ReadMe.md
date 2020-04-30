@@ -156,6 +156,10 @@ Please see the [variant calling pipeline Github repository](https://github.com/j
 
 ## Two-Choice Assay Design
 
+**water-block** directory
+
+- inventor files for custom PVC water blocks
+
 **pid-controller** directory
 
 - `PIDController.sch` - EAGLE schematic of connections for the custom Arduino-based temperature PID controller 
