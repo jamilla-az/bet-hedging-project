@@ -181,6 +181,18 @@ set(g.results.geom_point_handle,'MarkerSize',7);
 %% export as PDF
 print('SomA_Day1vsDay2','-dpdf','-fillpage')
 
+%% calculate repeatability based on Lessells & Boag 1987
+
+%make matrix for one way ANOVA
+y = [cell2mat(Day1(:,22))';cell2mat(Day2(:,22))'];
+
+%run 1-way anova
+[p,tbl,stats] = anova1(y,[],'off');
+    
+%calc repeatability
+s_e = tbl{3,4};
+s_a = (tbl{2,4} - s_e)/2;
+r = s_a/(s_a + s_e)
 %%
 [~,idx1,idx2] = intersect(cell2mat(tempPref_d1(:,11)),...
                 cell2mat(SomAquantTranscripts(:,7)), 'sorted'); %find only those flies tested on both days
