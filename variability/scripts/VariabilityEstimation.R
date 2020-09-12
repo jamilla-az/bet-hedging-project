@@ -240,6 +240,19 @@ plot_data$line = factor(plot_data$line,
 plot_data$origin = factor(plot_data$origin, 
                         levels = c('BE','CA','FL','MA','PA','TX','VA'))
 
+plot_data = rename(plot_data, stdev = var) #rename var column to stdev
+
+#make summary table
+
+var_data_summary = plot_data %>% 
+                  group_by(line, origin) %>% 
+                  summarise(stdev_mean = mean(stdev),
+                            stdev_lower_hdi = 
+                              as.numeric(HDInterval::hdi(stdev, credMass=0.95)[1]),
+                            stdev_upper_hdi = 
+                              as.numeric(HDInterval::hdi(stdev, credMass=0.95)[2]))
+write_csv2(var_data_summary, path = "/Users/jamillaakhund-zade/Thermotaxis Two Choice/autotracker_data/repository/variability/data/stan-output/var_estimates_summary_table.csv")
+
 #make posterior estimate array for origins ---------------- 
 plot_data = cbind(post_dist_sdSite2018, post_dist_sdSiteTotal2019)
 lines = c(levels(dat2018$origin), levels(dat2019.total$origin))
@@ -248,6 +261,7 @@ colnames(plot_data) = lines
 plot_data = plot_data %>% as_tibble() %>% gather(key=origin,value=var)
 plot_data$origin = factor(plot_data$origin, 
                           levels = c('BE','CA','FL','MA','PA','TX','VA'))
+plot_data = rename(plot_data, stdev = var) #rename var column to stdev
 
 #calculate differences between locations ----------
 
@@ -272,15 +286,15 @@ breaks = levels(plot_data$origin)
 labels = c('North CA','South CA','FL','MA','PA','TX','VA')
 
 
-q = ggplot(data = plot_data, aes(y = var, x = line)) # x = line or origin
+q = ggplot(data = plot_data, aes(y = stdev, x = origin)) # x = line or origin
 
 q + 
   geom_violin(aes(fill = origin), trim=T) +
   theme_classic() +
   theme(axis.text.y = element_text(size=14),
-        axis.text.x = element_text(size=14, angle = 45),
-        axis.title.y = element_blank(),
-        axis.title.x = element_blank(),
+        axis.text.x = element_text(size=12, angle = 90, hjust = 1),
+        axis.title.y = element_text(size=16),
+        axis.title.x = element_text(size=16),
         axis.ticks.x = element_blank(),
         legend.title = element_text(size = 14),
         legend.text = element_text(size = 12),
@@ -289,6 +303,7 @@ q +
         axis.line.y = element_line(lineend = 'butt'),
         plot.margin = margin(t = 20, r = 20, b = 20, l = 20, unit = "pt")) +
   #scale_fill_brewer(name = 'Origin',labels = labels, palette = 'Set2') +
+  scale_y_continuous(limits = c(0, 2.5), expand = c(0, 0)) + 
   scale_fill_manual(name = 'Origin',labels = labels, 
                     values = pal) 
 
