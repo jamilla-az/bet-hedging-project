@@ -133,8 +133,8 @@ void setup()
 
 // set setpoints
    //while(!Serial || Serial.available() <= 0); //wait for serial input to become available
-   if(Serial.available() > 0){
-     for (int i=0; i<4; i++){
+   if(Serial.available() > 3){
+     for (int i=0; i<Serial.available(); i++){
       sp[i]= Serial.parseFloat();
     }
       Setpoint4=sp[0];
@@ -148,8 +148,8 @@ void setup()
 void loop()
 {
 
-  if(Serial.available() > 0){
-   for (int i=0; i<4; i++){
+  if(Serial.available() > 3){
+   for (int i=0; i<Serial.available(); i++){
     sp[i]= Serial.parseFloat();
   }
     Setpoint4=sp[0];
